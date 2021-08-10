@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address = '0x31EE7988925692D1dFB73fb9610b61D4EEba6E74';
+const address = '0x117782f8fE4E22C68E95311F5A9C20986f2A2a76';
 const ABI = [
     {
         "constant":false,
@@ -57,6 +57,20 @@ const ABI = [
             }
         ],
         "name":"players",
+        "outputs":[
+            {
+                "name":"",
+                "type":"address"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"view",
+        "type":"function"
+    },
+    {
+        "constant":true,
+        "inputs":[],
+        "name":"lastWinner",
         "outputs":[
             {
                 "name":"",

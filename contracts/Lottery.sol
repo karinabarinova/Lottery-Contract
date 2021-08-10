@@ -3,6 +3,7 @@ pragma solidity ^0.4.17;
 contract Lottery {
     address public manager;
     address[] public players;
+    address public lastWinner;
 
     function Lottery() public {
         manager = msg.sender; //global variable, always available
@@ -20,6 +21,7 @@ contract Lottery {
     function selectWinner() public restricted {
         uint index = random() % players.length; //sudo random
         players[index].transfer(this.balance); //how mush wei we want to send    
+        lastWinner = players[index];
         players = new address[](0);//brand new dynamic array of addresses 
         //to reset contract's state
     }
